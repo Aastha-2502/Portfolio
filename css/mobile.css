@@ -403,6 +403,10 @@
     .hamburger--slider.is-active .hamburger-inner::after {
         transform: translate3d(0, -7px, 0) rotate(-90deg);
     }
+    #media {
+        width: 350px;
+        height: 700px;
+    }
     .lds-spinner,
     .lds-spinner div,
     .lds-spinner div:after
