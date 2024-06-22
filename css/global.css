@@ -54,3 +54,17 @@ body {
 #media {
     transform: rotate(90deg);
 }
+
+@media (min-aspect-ratio: 16/9){
+    .media{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .media{
+        width: 100%;
+        height: auto;
+    }
+}
+

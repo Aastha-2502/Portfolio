@@ -34,7 +34,7 @@
         position: absolute;
         top: 55px;
         width: 100%;
-        z-index: 1;
+        z-index: 4;
     }
 
     .menu-open main {
@@ -493,5 +493,85 @@
     }
     .lds-spinner {
         padding: 200px
+    }
+    @media (max-width: 768px) {
+        .container .top {
+            width: 100vw;
+            height: 100vw; 
+            background-color: rgba(228,228,228,255);
+            z-index: -1;
+            align-items: center;
+        }
+
+        .container .top::before{
+            content: "";
+            inset: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(43, 38, 38, 0.446);
+            z-index: 1;
+        }
+    
+        #media {
+            width: 200vh;
+            height: 100%;
+            z-index: 0;
+        }
+        .top h1{
+            font-size: 90px;
+            color: #fff;
+            font-weight: 600;
+            font-family:Arial, Helvetica, sans-serif;
+            z-index: 2;
+        }
+        .top h1:hover{
+            -webkit-text-stroke: 2px #fff;
+            color: transparent;
+            transition: 0.5s;
+        }
+
+        #second .introduction, #second .section-body{
+            position: relative;
+            display: flex;
+            text-align: center;
+        }
+        #second .introduction::before, #second .section-body::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(43, 38, 38, 0.717);
+            z-index: -1;
+        }
+    
+        #media1, #media2 {
+            flex-wrap: wrap;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+        }
+    
+        #second .introduction h2{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            position: absolute;
+            top: 0;
+            left: 10;
+        }
+    
+        #second .introduction a{
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            top: 0;
+            font-size: medium;
+            padding: 10% 10% 0% 10%;
+        }
+      
     }
 }

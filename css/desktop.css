@@ -151,6 +151,7 @@
         height: 100vh;
         opacity: 0;
         transition: 0.5s opacity;
+        position: relative;
     }
 
     section.active .container {
@@ -359,19 +360,49 @@
 
     .container .top {
         display: flex;
+        width: calc(100vw - 6 * 80px);
+        height: 70vh;
         justify-content: center;
         align-content: center;
+        object-fit: fill;
+        overflow: hidden;
+        background-color: rgba(228,228,228,255);
+        z-index: 0;
+        text-align: center;
+    }
+
+    .container .top::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(43, 38, 38, 0.446);
+        z-index: 2;
+    }
+    .top h1{
+        font-size: 110px;
+        color: #fff;
+        font-weight: 600;
+        font-family:Arial, Helvetica, sans-serif;
+        z-index: 3;
+    }
+
+    .top h1:hover{
+        -webkit-text-stroke: 2px #fff;
+        color: transparent;
+        transition: 0.5s;
+    }
+    .container .details{
+        z-index: 3;
     }
   
     #media {
-        transform: rotate(90deg);
-        flex-wrap: wrap;
-        justify-content: stretch;
-        align-content: stretch;
-        object-fit: cover;
+        object-fit: fill;
         height: calc(100vw - 6 * 80px);
-        width: 100%;
-        padding-right: 410px;
+        width: 80vh;
+        transform: rotate(90deg);
+        position: absolute;
+        bottom: 11ch;
+        z-index: 1;
     }
 
     .home .animation svg path {
@@ -472,18 +503,49 @@
         width: 130px;
     }
 
-    #second .introduction{
+    #second .introduction, #second .section-body{
+        position: relative;
         display: flex;
+        text-align: center;
     }
-    #media1 {
+    #second .introduction::before, #second .section-body::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(43, 38, 38, 0.717);
+        z-index: -1;
+    }
+
+    #media1, #media2 {
         flex-wrap: wrap;
         object-fit: cover;
         width: 100%;
         height: 100%;
         justify-content: center;
         align-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
     }
 
+    #second .introduction h2, #second .section-body h2{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        position: absolute;
+        padding: 10px;
+        top: 0;
+        left: 10;
+    }
+
+    #second .introduction a, #second .section-body a{
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 0;
+        font-size: large;
+        padding: 25% 10% 0% 10%;
+    }
+    
     section .email,
     section .links {
         align-items: center;
